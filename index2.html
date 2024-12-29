@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=
+    , initial-scale=1.0"
+        />
+        <title>如来编程</title>
+        <style>
+            body {
+                margin: 0;
+                background-color: beige;
+                height: 100vh;
+            }
+            .yinying {
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+                    0 1px 2px rgba(0, 0, 0, 0.24);
+            }
+            .flex {
+                display: flex;
+            }
+            .baise {
+                background-color: white;
+            }
+            .flex1 {
+                flex: 1;
+            }
+            .column {
+                flex-direction: column;
+            }
+            .mg8 {
+                margin: 8px;
+            }
+            .mgr8 {
+                margin-right: 8px;
+            }
+            .mgt8 {
+                margin-top: 8px;
+            }
+            .daohang {
+                padding: 10px 20px;
+                border-bottom: 1px solid rgb(190, 190, 190);
+                font-size: 14px;
+                color: #999;
+                cursor: pointer;
+            }
+            /*当屏幕宽度小于600px */
+            @media (max-width: 600px) {
+                .cebian {
+                    display: none;
+                }
+                .neirong {
+                    flex-direction: column;
+                }
+                .shujvqu {
+                    flex-direction: column;
+                }
+                .youqu {
+                    margin-left: 8px;
+                }
+                .shujv {
+                    margin: 0 0 8px;
+                    flex: auto;
+                }
+            }
+            .neirong::-webkit-scrollbar {
+                display: none;
+            }
+        </style>
+    </head>
+    <body class="flex">
+        <!-- 侧边栏 -->
+        <div
+            style="width: 200px; z-index: 2"
+            class="baise yinying cebian"
+        >
+            <!-- 头像栏 -->
+            <div
+                style="
+                    padding: 10px;
+                    justify-content: center;
+                    align-items: center;
+                    border-bottom: 1px solid #999;
+                "
+                class="flex"
+            >
+                <img
+                    src="1.JPG"
+                    alt="touxiang"
+                    width="40px"
+                    height="40px"
+                />
+                <div style="margin-left: 10px">如来</div>
+            </div>
+            <!-- 导航栏 -->
+            <div style="flex: 1">
+                <div
+                    id="dian1"
+                    class="daohang"
+                >
+                    导航
+                </div>
+                <div class="daohang">导航</div>
+                <div class="daohang">导航</div>
+                <div class="daohang">导航</div>
+                <div class="daohang">导航</div>
+            </div>
+        </div>
+        <!-- 主区域 -->
+        <div class="flex1 flex column">
+            <!-- 头部区 -->
+            <div
+                style="height: 60px; z-index: 1"
+                class="baise yinying"
+            ></div>
+            <!-- 内容区 -->
+            <div
+                style="overflow: auto"
+                class="flex1 flex neirong"
+            >
+                <!-- 左侧内容 -->
+                <div
+                    style="flex: 3"
+                    class="flex column mg8"
+                >
+                    <!-- 数据区 -->
+                    <div class="flex shujvqu">
+                        <!-- 数据块 -->
+                        <div
+                            style="height: 100px"
+                            class="shujv baise yinying flex1 mgr8"
+                            onclick="jiao()"
+                        >
+                            1
+                        </div>
+                        <div
+                            style="height: 100px"
+                            class="shujv baise yinying flex1 mgr8"
+                            onclick="bian()"
+                        >
+                            2
+                        </div>
+                        <div
+                            style="height: 100px"
+                            class="shujv baise yinying flex1 mgr8"
+                        >
+                            3
+                        </div>
+                        <div
+                            style="height: 100px"
+                            class="shujv baise yinying flex1"
+                        >
+                            4
+                        </div>
+                    </div>
+                    <!-- 列表区 -->
+                    <div class="flex column">
+                        <div
+                            style="height: 160px"
+                            class="baise mgt8 yinying"
+                        >
+                            l
+                        </div>
+                        <div
+                            style="height: 160px"
+                            class="baise mgt8 yinying"
+                        >
+                            l
+                        </div>
+                        <div
+                            style="height: 160px"
+                            class="baise mgt8 yinying"
+                        >
+                            l
+                        </div>
+                        <div
+                            style="height: 160px"
+                            class="baise mgt8 yinying"
+                        >
+                            l
+                        </div>
+                        <div
+                            style="height: 160px"
+                            class="baise mgt8 yinying"
+                        >
+                            l
+                        </div>
+                    </div>
+                </div>
+                <!-- 右侧内容 -->
+                <div
+                    style="flex: 1"
+                    class="youqu flex column mg8 mgt8"
+                >
+                    <!-- 提示区 -->
+                    <div
+                        style="height: 150px"
+                        class="baise yinying"
+                    ></div>
+                    <!-- 消息区 -->
+                    <div
+                        style="height: 350px"
+                        class="baise mgt8 yinying"
+                    ></div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        function jiao() {
+            alert("hao!");
+        }
+        function bian() {
+            ele = document.getElementById("dian1");
+            if (ele.innerHTML == "导航") {
+                ele.innerHTML = "七十二变!";
+            } else {
+                ele.innerHTML = "导航";
+            }
+        }
+        document.getElementById("dian1").addEventListener("click", jiao);
+    </script>
+</html>
